@@ -2,7 +2,9 @@ import React from 'react'
 
 function Operation(props) {
     return (
-        <button className='operation-btn' id={props.id}>
+        <button onClick={() => {
+            props.clickOperationHandler(props.children)
+        }} className='operation-btn' id={props.id}>
             {props.children}
         </button>
     )

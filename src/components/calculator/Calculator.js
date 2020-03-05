@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 import Operation from "./Operation";
 import Output from "./Output";
+import { evaluate } from "mathjs";
 
 function Calculator() {
   const [inputStore, setinputStore] = useState(0);
@@ -17,9 +18,20 @@ function Calculator() {
       } else {
         setinputStore(inputStore + value);
       }
-      
     }
   };
+  const equalHandler = () => {
+    setinputStore(0)
+    setresult(evaluate(inputStore))
+  }
+
+  const clickOperationHandler = (value) => {
+    if (value === '=') {
+      equalHandler()
+    } else {
+      setinputStore(inputStore + value)
+    }
+  }
   return (
     <div className="calculator-area">
       <div className="button-area">
@@ -75,13 +87,35 @@ function Calculator() {
         </div>
         <div className="operation">
           <div className="row">
-            <Operation id={"add"}>+</Operation>
-            <Operation id={"subtract"}>-</Operation>
-            <Operation id={"multiply"}>*</Operation>
-            <Operation id={"divide"}>/</Operation>
+            <Operation clickOperationHandler={clickOperationHandler} id={"add"}>
+              +
+            </Operation>
+            <Operation
+              clickOperationHandler={clickOperationHandler}
+              id={"subtract"}
+            >
+              -
+            </Operation>
+            <Operation
+              clickOperationHandler={clickOperationHandler}
+              id={"multiply"}
+            >
+              *
+            </Operation>
+            <Operation
+              clickOperationHandler={clickOperationHandler}
+              id={"divide"}
+            >
+              /
+            </Operation>
           </div>
           <div className="row">
-            <Operation id={"equals"}>=</Operation>
+            <Operation
+              clickOperationHandler={clickOperationHandler}
+              id={"equals"}
+            >
+              =
+            </Operation>
           </div>
         </div>
       </div>
