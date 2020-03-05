@@ -1,0 +1,100 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-color: #616C6F;
+}
+
+.calculator-area {
+  width: 600px;
+  background-color: #EAF0F1;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+
+
+}
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.digit {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #A4B0BD;
+}
+.button-area {
+  padding: 20px;
+  width: 50%;
+  height: 100%;
+}
+.output-area {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+}
+.operation-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+#equals {
+  width: 95%;
+  background-color: #E84342;
+  color: #fff;
+}
+#add {
+  background-color: #3498DB;
+  color: #fff;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+#subtract {
+  background-color: #10A881;
+  color: #fff;
+}
+#multiply {
+  background-color: #EA7773;
+  color: #fff;
+}
+#divide {
+  background-color: #0A3D62;
+  color: #fff;
+}
+#clear {
+  background-color: #2F363F;
+  color: #fff;
+}
+
+.display {
+  height: 45%;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #DAE0E2;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  color: #fff;
+}
+#display {
+  background-color: black;
+  width: 200px;
+  padding: 10px 0;
+}
+.operation {
+  height: 50%;
+}
