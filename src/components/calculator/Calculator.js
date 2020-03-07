@@ -13,7 +13,7 @@ function Calculator() {
       setinputStore(0);
       setresult("");
     } else {
-      if (inputStore === 0) {
+      if (/^0/.test(inputStore)) {
         setinputStore(value);
       } else {
         setinputStore(inputStore + value);
